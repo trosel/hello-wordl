@@ -7,9 +7,10 @@ interface KeyboardProps {
 
 export function Keyboard(props: KeyboardProps) {
   const keyboard = [
-    "q w e r t y u i o p".split(" "),
-    "a s d f g h j k l".split(" "),
-    "Backspace z x c v b n m Enter".split(" "),
+    "𐑶 𐑬 𐑫 𐑜 𐑖 𐑗 𐑙 𐑘 𐑡 𐑔".split(" "),
+    "𐑭 𐑸 𐑷 𐑹 𐑵 𐑿 𐑱 𐑺 𐑳 𐑻 𐑓 𐑞 𐑤 𐑥 𐑒 𐑢 𐑣 𐑠".split(" "),
+    "𐑪 𐑨 𐑦 𐑩 𐑼 𐑧 𐑐 𐑯 𐑑 𐑮 𐑕 𐑛".split(" "),
+    "𐑚𐑨𐑒𐑕𐑐𐑱𐑕 𐑾 𐑽 𐑲 𐑴 𐑰 𐑚 𐑝 𐑟 𐑮𐑦𐑑𐑻𐑯".split(" "),
   ];
 
   return (
@@ -35,7 +36,7 @@ export function Keyboard(props: KeyboardProps) {
                   props.onKey(label);
                 }}
               >
-                {label.replace("Backspace", "⌫")}
+                {label.replace("Backspace", "🔙")}
               </div>
             );
           })}

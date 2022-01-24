@@ -1,4 +1,4 @@
-import dictionary from "./dictionary.json";
+import dictionary from "./shavianDictionary.json";
 
 export enum Difficulty {
   Normal,
@@ -57,8 +57,8 @@ export function speak(
 }
 
 export function ordinal(n: number): string {
-  return n + ([, "st", "nd", "rd"][(n % 100 >> 3) ^ 1 && n % 10] || "th");
+  return n + ([, "𐑕𐑑", "𐑯𐑛", "𐑛"][(n % 100 >> 3) ^ 1 && n % 10] || "𐑔");
 }
 
 export const englishNumbers =
-  "zero one two three four five six seven eight nine ten eleven".split(" ");
+  "𐑟𐑽𐑴 𐑢𐑳𐑯 𐑑𐑵 𐑔𐑮𐑰 𐑓𐑹 𐑓𐑲𐑝 𐑕𐑦𐑒𐑕 𐑕𐑧𐑝𐑩𐑯 𐑱𐑑 𐑯𐑲𐑯 𐑑𐑧𐑯 𐑦𐑤𐑧𐑝𐑩𐑯".split(" ");

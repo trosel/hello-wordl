@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Row, RowState } from "./Row";
-import dictionary from "./dictionary.json";
+import dictionary from "./shavianDictionary.json";
 import { Clue, clue, describeClue, violation } from "./clue";
 import { Keyboard } from "./Keyboard";
 import targetList from "./targets.json";
@@ -140,11 +140,11 @@ function Game(props: GameProps) {
       setHint("");
     } else if (key === "Enter") {
       if (currentGuess.length !== wordLength) {
-        setHint("Too short");
+        setHint("𐑑𐑵 𐑖𐑹𐑑");
         return;
       }
       if (!dictionary.includes(currentGuess)) {
-        setHint("Not a valid word");
+        setHint("𐑯𐑪𐑑 𐑩 𐑝𐑨𐑤𐑦𐑛 𐑢𐑻𐑛");
         return;
       }
       for (const g of guesses) {
@@ -159,15 +159,15 @@ function Game(props: GameProps) {
       setCurrentGuess((guess) => "");
 
       const gameOver = (verbed: string) =>
-        `You ${verbed}! The answer was ${target.toUpperCase()}. (Enter to ${
+        `𐑿 ${verbed}! 𐑞 𐑭𐑯𐑕𐑼 𐑢𐑪𐑟 ${target.toUpperCase()}. (Enter to ${
           challenge ? "play a random game" : "play again"
         })`;
 
       if (currentGuess === target) {
-        setHint(gameOver("won"));
+        setHint(gameOver("𐑢𐑳𐑯"));
         setGameState(GameState.Won);
       } else if (guesses.length + 1 === props.maxGuesses) {
-        setHint(gameOver("lost"));
+        setHint(gameOver("𐑤𐑪𐑕𐑑"));
         setGameState(GameState.Lost);
       } else {
         setHint("");
